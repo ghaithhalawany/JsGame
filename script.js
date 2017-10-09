@@ -29,6 +29,11 @@ var ball = {
 				newRound();
 			}else{
 				this.speed.x *= -1;
+				if(this.speed.x > 0){
+					this.speed.x++;
+				}else{
+					this.speed.x--;
+				}
 			}
 		}
 		if(this.position.x < player2.position.x + player2.size.width){
@@ -37,6 +42,11 @@ var ball = {
 				newRound();
 			}else{
 				this.speed.x *= -1;
+				if(this.speed.x > 0){
+					this.speed.x++;
+				}else{
+					this.speed.x--;
+				}
 			}
 		}
 	},
@@ -172,6 +182,7 @@ function update(){
 function init(){
 	ball.position.x = 300;
 	ball.position.y = 200;
+	ball.speed.x = 5;
 }
 
 function draw(){
