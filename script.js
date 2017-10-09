@@ -3,7 +3,6 @@ var c = cnv.getContext('2d');
 var height = cnv.height = 400;
 var width = cnv.width = 600;
 
-
 var ball = {
 
 	size: 7, 
@@ -185,11 +184,20 @@ function init(){
 	ball.speed.x = 5;
 }
 
+function drawField(){
+	c.beginPath();
+	c.setLineDash([20, 15]);
+	c.moveTo(300, 0);
+	c.lineTo(300, 400);
+	c.stroke();
+	c.setLineDash([0]);
+}
 function draw(){
 	c.clearRect(0, 0, width, height);
 	ball.draw();
 	player1.draw();
 	player2.draw();
+	drawField();
 }
 
 var startMenu = false;
